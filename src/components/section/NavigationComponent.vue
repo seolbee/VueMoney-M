@@ -1,6 +1,6 @@
 <template>
     <FlexboxLayout alignItems="space-between">
-        <Label class="fa" text="{{'fa-home' | fontawesome}}"/>
+        <Label class='fa' :text="'fa-eye' | fonticon"/>
     </FlexboxLayout>
 </template>
 <script>

@@ -4,18 +4,24 @@ import VueDevtools from 'nativescript-vue-devtools';
 import Navigator from 'nativescript-vue-navigator';
 import {routes} from './route';
 
-import {Fontawesome} from 'nativescript-fontawesome';
-
-Fontawesome.init();
-
+import './app.scss';
 import './css/app.css';
+
+import {TNSFontIcon, fonticon} from 'nativescript-fonticon';
 
 if(TNS_ENV !== 'production') {
   Vue.use(VueDevtools)
 }
 
-Vue.use(Navigator, {routes});
+TNSFontIcon.paths = {
+  'fa' : './assets/css/fontawesome.css'
+};
 
+TNSFontIcon.loadCss();
+
+Vue.filter('fonticon', fonticon);
+
+Vue.use(Navigator, {routes});
 // Prints Vue logs when --env.production is *NOT* set while building
 Vue.config.silent = (TNS_ENV === 'production')
 

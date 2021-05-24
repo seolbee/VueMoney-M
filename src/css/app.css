@@ -11,6 +11,6 @@ Page{
     height: 100%;
 }
 
-.fontAwesomeIcons{
-    font-family:"fontAwesome";
+.fa {
+    font-family: 'FontAwesome', 'fontawesome-webfont';
 }
